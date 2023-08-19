@@ -1,0 +1,15 @@
+from random import randint
+from fila_classe import Fila
+
+fila_do_rudolf = Fila(randint(0, 10))
+
+for _ in range(100):
+    match(randint(0,2)):
+        case 0:
+            valor = randint(0,100)
+            print(f'Enfileirando {valor}...')
+            fila_do_rudolf.enqueue(valor)
+        case 1:
+            print(f'Desfileirando...')
+            fila_do_rudolf.dequeue()
+    print(fila_do_rudolf.queue, fila_do_rudolf.inicio, fila_do_rudolf.fim)
