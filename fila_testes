@@ -12,4 +12,4 @@ for _ in range(100):
         case 1:
             print(f'Desfileirando...')
             fila_do_rudolf.dequeue()
-    print(fila_do_rudolf.queue, fila_do_rudolf.inicio, fila_do_rudolf.fim)
+    print(fila_do_rudolf, fila_do_rudolf.inicio, fila_do_rudolf.fim)
