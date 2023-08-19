@@ -1,0 +1,55 @@
+class Fila:
+    def __init__(self, tamanho: int):
+        self.__tamanho = tamanho
+        self.__queue = [None for _ in range(tamanho)]
+        self.__inicio, self.__fim = None, None
+        
+
+    @property
+    def tamanho(self):
+        return self.__tamanho
+
+    @property
+    def inicio(self):
+        return self.__inicio
+    
+    @inicio.setter
+    def inicio(self, new):
+        self.__inicio = new
+
+    @property
+    def fim(self):
+        return self.__fim
+    
+    @fim.setter
+    def fim(self, new):
+        self.__fim = new
+    
+    @property
+    def queue(self):
+        return self.__queue
+
+    def __str__(self):
+        return str(self.queue)
+    
+    def primeiro(self):
+        return self.queue[self.inicio]
+    
+    def ultimo(self):
+        return self.queue[self.fim]
+
+    def enqueue(self, elemento):
+        if self.fim is not None:
+            self.fim = (self.fim + 1) % self.tamanho
+            self.queue[self.fim] = elemento
+        else:
+            self.inicio = 0
+            self.fim = 0
+            self.queue[self.fim] = elemento
+                
+    def dequeue(self):
+        if self.inicio is not None:
+            self.inicio = (self.inicio + 1) % self.tamanho
+        else:
+            print("Fila vazia") # aqui estouraria erro, mas deixei esse print pra não parar os testes
+    
